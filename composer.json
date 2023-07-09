@@ -1,7 +1,7 @@
 {
-    "name": "upi20/sipankab",
+    "name": "upi20/spk-perawat-terbaik-saw",
     "type": "project",
-    "description": "Sistem Pendukung Keputusan untuk Proses seleksi penerimaan panwaslu kecamatan",
+    "description": "SPK Perawat Terbaik",
     "keywords": [
         "framework",
         "laravel",
@@ -9,9 +9,7 @@
         "datatable",
         "bootstrap5",
         "rbac",
-        "menu-management",
-        "spk",
-        "pkh"
+        "menu-management"
     ],
     "license": "GNU",
     "require": {

@@ -175,7 +175,7 @@ class AlternatifTableSeeder extends Seeder
             17 =>
             array(
                 'id' => 59,
-                'nama' => 'Isep Lutpi Nur',
+                'nama' => 'Super Admin',
                 'slug' => 'isep-lutpi-nur',
                 'import_id' => 21,
                 'created_at' => '2023-07-09 15:13:56',
