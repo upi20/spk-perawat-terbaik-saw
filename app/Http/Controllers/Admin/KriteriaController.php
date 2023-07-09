@@ -12,7 +12,6 @@ class KriteriaController extends Controller
 {
     private $validate_model = [
         'bobot' => ['required', 'integer'],
-        'jenis' => ['required', 'string'],
         'nama' => ['required', 'string'],
         'kode' => ['required', 'string'],
     ];
@@ -36,7 +35,6 @@ class KriteriaController extends Controller
 
             $model = new Kriteria();
             $model->bobot = $request->bobot;
-            $model->jenis = $request->jenis;
             $model->nama = $request->nama;
             $model->kode = $request->kode;
             $model->save();
@@ -57,7 +55,6 @@ class KriteriaController extends Controller
                 'required', 'int',
             ]], $this->validate_model));
             $model->bobot = $request->bobot;
-            $model->jenis = $request->jenis;
             $model->nama = $request->nama;
             $model->kode = $request->kode;
             $model->save();

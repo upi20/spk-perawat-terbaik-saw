@@ -258,7 +258,7 @@ class Alternatif extends Model
             'Nama',
         ];
 
-        foreach ($kriterias as $kriteria) $headers[] = "{$kriteria->nama} ({$kriteria->kode})\n{$kriteria->dari}-{$kriteria->sampai}";
+        foreach ($kriterias as $kriteria) $headers[] = "{$kriteria->nama} ({$kriteria->kode})";
 
         // laporan baru
         $row = 1;
@@ -432,7 +432,7 @@ class Alternatif extends Model
             'Nama',
         ];
 
-        foreach ($kriterias as $kriteria) $headers[] = "{$kriteria->nama} ({$kriteria->kode})\n{$kriteria->dari}-{$kriteria->sampai}";
+        foreach ($kriterias as $kriteria) $headers[] = "{$kriteria->nama} ({$kriteria->kode})";
 
         // laporan baru
         $row = 1;
