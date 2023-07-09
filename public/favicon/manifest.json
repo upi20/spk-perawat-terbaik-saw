@@ -1,7 +1,7 @@
 {
-    "name": "SPK Siswa Teladan SDN Cipetir 4",
-    "short_name": "Siswa Teladan",
-    "description": "Sistem Pendukung Keputusan Pemilihan Siswa Teladan Di SD Negeri Cipetir 4 Dengan Menggunakan Metode Multi-Objective Optimization On The Basis Of Ratio Analysis (Moora)",
+    "name": "SPK Perawat Terbaik",
+    "short_name": "SPK Perawat Terbaik",
+    "description": "SPK Perawat Terbaik",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",

@@ -67,7 +67,7 @@ function editFunc(id) {
             const values = e.alternatif_nilais.length ? e.alternatif_nilais[0].nilai : '';
             html += `<div class="form-group">
                 <label class="form-label mb-1" for="nilai${e.id}" title="nilai${e.kode}">${e.nama}<span class="text-danger">*</span> </label>
-                <input type="number" step="any" min="${e.dari}" max="${e.sampai}" class="form-control" id="nilai${e.id}" name="nilais[${e.id}]" placeholder="${e.dari}-${e.sampai}" required="" value="${values}" />
+                <input type="number" step="any" class="form-control" id="nilai${e.id}" name="nilais[${e.id}]" placeholder="${e.dari}-${e.sampai}" required="" value="${values}" />
             </div>`;
         });
 

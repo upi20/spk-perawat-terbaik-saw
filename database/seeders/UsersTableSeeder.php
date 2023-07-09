@@ -41,8 +41,8 @@ class UsersTableSeeder extends Seeder
             1 =>
             array(
                 'id' => 2,
-                'name' => 'Riyandi Adiwijaya',
-                'email' => 'riyandi@gmail.com',
+                'name' => 'Valentino Claudio Usmany',
+                'email' => 'claudio@gmail.com',
                 'foto' => NULL,
                 'username' => NULL,
                 'email_verified_at' => NULL,

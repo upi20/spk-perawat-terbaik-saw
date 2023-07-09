@@ -95,7 +95,7 @@ $page_attr_title = ($page_attr->title == '' ? '' : $page_attr->title . ' | ') . 
 
             <div class="col-xl-6 col-lg-6 col-md-12">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-5 bg-dark">
                     <div class="card-body p-0">
                         <div class="p-5">
                             <div class="text-center mb-3">
