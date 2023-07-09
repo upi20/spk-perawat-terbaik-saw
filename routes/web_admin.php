@@ -26,7 +26,6 @@ use App\Http\Controllers\Admin\Setting\DashboardController as SettingDashboardCo
 // Import =============================================================================================================
 use App\Http\Controllers\Admin\Import\AlternatifController as ImportAlternatifController;
 use App\Http\Controllers\Admin\KriteriaController;
-use App\Http\Controllers\Admin\KriteriaNilaiController;
 use App\Http\Controllers\Admin\PerhitunganController;
 
 // ====================================================================================================================
@@ -164,18 +163,6 @@ Route::prefix($prefix)->group(function () use ($name, $prefix) {
         Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
         Route::post('/delete', 'delete_bulk')->name("$name.delete_bulk")->middleware("permission:$name.delete");
         Route::delete('/{model}', 'delete')->name("$name.delete")->middleware("permission:$name.delete");
-    });
-
-    $prefix = 'nilai';
-    Route::controller(KriteriaNilaiController::class)->prefix($prefix)->group(function () use ($name, $prefix) {
-        $name = "$name.$prefix"; // admin.kriteria.nilai
-        Route::get('/datatable', 'datatable')->name("$name.datatable")->middleware("permission:$name");
-        Route::get('/format', 'format')->name("$name.format")->middleware("permission:$name");
-        Route::get('/find', 'find')->name("$name.find")->middleware("permission:$name.update");
-        Route::get('/{kriteria:slug}', 'index')->name($name)->middleware("permission:$name");
-        Route::post('/update', 'update')->name("$name.update")->middleware("permission:$name.update");
-        Route::post('/', 'insert')->name("$name.insert")->middleware("permission:$name.insert");
-        Route::post('/delete', 'delete_bulk')->name("$name.delete_bulk")->middleware("permission:$name.delete");
     });
 });
 

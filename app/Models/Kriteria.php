@@ -37,11 +37,6 @@ class Kriteria extends Model
         ];
     }
 
-    public function nilais()
-    {
-        return $this->hasMany(KriteriaNilai::class, 'kriteria_id', 'id');
-    }
-
 
     public function alternatif_nilais()
     {
@@ -148,21 +143,5 @@ class Kriteria extends Model
 
         // create datatable
         return $datatable->make(true);
-    }
-
-    public function refersDariSampai()
-    {
-        $id = $this->attributes['id'];
-
-        // Dari
-        $dari = KriteriaNilai::where('kriteria_id', $id)->orderBy('dari')->first();
-
-        // Sampai
-        $sampai = KriteriaNilai::where('kriteria_id', $id)->orderBy('sampai', 'desc')->first();
-
-        $this->dari = is_null($dari) ? 0 : $dari->dari;
-        $this->sampai = is_null($sampai) ? 0 : $sampai->sampai;
-
-        return $this->save();
     }
 }

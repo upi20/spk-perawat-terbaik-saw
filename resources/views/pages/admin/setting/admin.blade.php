@@ -33,7 +33,7 @@
 
                                 <div class="form-group">
                                     <label class="form-label mb-1">Logo Light
-                                        <span class="badge bg-primary" id="preview_foto_light_mode"
+                                        <span class="badge bg-info text-white" id="preview_foto_light_mode"
                                             onclick="viewImage('{{ setting_get(set_admin('app.foto_light_mode')) }}', 'Logo Light View')">
                                             view</span>
                                     </label>
@@ -45,7 +45,7 @@
 
                                 <div class="form-group">
                                     <label class="form-label mb-1">Logo Dark
-                                        <span class="badge bg-primary" id="preview_foto_dark_mode"
+                                        <span class="badge bg-info text-white" id="preview_foto_dark_mode"
                                             onclick="viewImage('{{ setting_get(set_admin('app.foto_dark_mode')) }}', 'Logo Dark View')">
                                             view</span>
                                     </label>
@@ -57,7 +57,7 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label mb-1">Logo Landscape Light
-                                        <span class="badge bg-primary" id="preview_foto_light_landscape_mode"
+                                        <span class="badge bg-info text-white" id="preview_foto_light_landscape_mode"
                                             onclick="viewImage('{{ setting_get(set_admin('app.foto_light_landscape_mode')) }}', 'Logo Light View')">
                                             view</span>
                                     </label>
@@ -69,7 +69,7 @@
 
                                 <div class="form-group">
                                     <label class="form-label mb-1">Logo Landscape Dark
-                                        <span class="badge bg-primary" id="preview_foto_dark_landscape_mode"
+                                        <span class="badge bg-info text-white" id="preview_foto_dark_landscape_mode"
                                             onclick="viewImage('{{ setting_get(set_admin('app.foto_dark_landscape_mode')) }}', 'Logo Dark View')">
                                             view</span>
                                     </label>
@@ -123,7 +123,7 @@
 
                         <div class="form-group">
                             <label class="form-label mb-1">Image
-                                <span class="badge bg-primary" id="preview_meta_image"
+                                <span class="badge bg-info text-white" id="preview_meta_image"
                                     onclick="viewImage('{{ setting_get(set_admin('meta.image')) }}', 'Meta Image View')">
                                     view</span>
                             </label>

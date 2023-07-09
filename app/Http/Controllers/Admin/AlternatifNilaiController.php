@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\AlternatifNilai;
 use App\Models\Alternatif;
 use App\Models\Kriteria;
-use App\Models\KriteriaNilai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use League\Config\Exception\ValidationException;
@@ -42,18 +41,9 @@ class AlternatifNilaiController extends Controller
 
             // masukan nilai nya
             foreach ($request->nilais as $kriteria_id => $nilai) {
-                $kriteria = Kriteria::findOrFail($kriteria_id);
-
                 $new_nilai = new AlternatifNilai();
                 $new_nilai->kriteria_id = $kriteria_id;
                 $new_nilai->alternatif_id = $model->id;
-
-                // cek nilai valid atau tidak untuk kirteria_nilai_id
-                if ($nilai >= $kriteria->dari && $nilai <= $kriteria->sampai) {
-                    $kriteria_nilai = KriteriaNilai::whereRaw("$nilai <= sampai and kriteria_id = {$kriteria->id}")->orderBy('sampai')->first();
-                    $new_nilai->kirteria_nilai_id = $kriteria_nilai->id;
-                }
-
                 $new_nilai->nilai = $nilai;
                 $new_nilai->save();
             }

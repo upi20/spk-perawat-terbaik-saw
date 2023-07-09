@@ -6,7 +6,6 @@ use App\Models\Alternatif;
 use App\Models\AlternatifNilai;
 use App\Models\Import\Alternatif as ImportAlternatif;
 use App\Models\Kriteria;
-use App\Models\KriteriaNilai;
 use App\Models\Menu\Admin as MenuAdmin;
 use App\Models\RoleHasMenu;
 use Illuminate\Console\Command;
@@ -78,7 +77,6 @@ class backup extends Command
             ],
             'spk_moora' => [
                 Kriteria::tableName,
-                KriteriaNilai::tableName,
                 Alternatif::tableName,
                 AlternatifNilai::tableName,
             ],

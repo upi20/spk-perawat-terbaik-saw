@@ -17,7 +17,6 @@ class Alternatif extends Model
     protected $fillable = [
         'slug',
         'nama',
-        'kelas',
     ];
 
     protected $primaryKey = 'id';

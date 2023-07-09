@@ -25,7 +25,6 @@ $(document).ready(function () {
     ajax: {
       url: "{{ route(l_prefix($hpu)) }}",
       data: function (d) {
-        d['filter[kelas]'] = $('#filter_kelas').val();
       },
       complete: function (data) {
         data.responseJSON.data.forEach(e => {
@@ -52,10 +51,6 @@ $(document).ready(function () {
     {
       data: 'nama',
       name: 'nama'
-    },
-    {
-      data: 'kelas',
-      name: 'kelas'
     },
     ...(can_update || can_delete ? [{
       data: 'id',
@@ -167,7 +162,6 @@ function editFunc(id) {
       $('#modal-default').modal('show');
       $('#id').val(data.id);
       $('#nama').val(data.nama);
-      $('#kelas').val(data.kelas);
 
     },
     error: function (data) {

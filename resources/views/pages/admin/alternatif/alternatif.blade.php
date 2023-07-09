@@ -42,7 +42,6 @@
                         </th>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Kelas</th>
                         {!! $can_delete || $can_update ? '<th>Aksi</th>' : '' !!}
                     </tr>
                 </thead>
@@ -67,10 +66,6 @@
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" id="nama" name="nama" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="kelas">Kelas</label>
-                            <input type="text" class="form-control" id="kelas" name="kelas" />
                         </div>
                     </form>
                 </div>

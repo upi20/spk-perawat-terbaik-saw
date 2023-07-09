@@ -6,7 +6,6 @@ use App\Models\Alternatif as ModelsAlternatif;
 use App\Models\AlternatifNilai;
 use App\Models\Kecamatan;
 use App\Models\Kriteria;
-use App\Models\KriteriaNilai;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -203,25 +202,17 @@ class Alternatif extends Model
             if ($i < $start) continue;
             $alternatif = new ModelsAlternatif();
             $alternatif->nama = $v[1];
-            $alternatif->kelas = $v[2];
             $alternatif->import_id = $model->id;
             $alternatif->save();
 
             // insert nilai
             foreach ($kriterias as $j => $kriteria) {
-                $nilai = $v[3 + $j];
+                $nilai = $v[2 + $j];
 
                 // cek nilai id
                 $a_nilai = new AlternatifNilai();
                 $a_nilai->alternatif_id = $alternatif->id;
                 $a_nilai->kriteria_id = $kriteria->id;
-
-                // cek nilai valid atau tidak
-                if ($nilai >= $kriteria->dari && $nilai <= $kriteria->sampai) {
-                    $kriteria_nilai = KriteriaNilai::whereRaw("$nilai <= sampai and kriteria_id = {$kriteria->id}")->orderBy('sampai')->first();
-                    $a_nilai->kirteria_nilai_id = $kriteria_nilai->id;
-                }
-
                 $a_nilai->nilai = $nilai;
                 $a_nilai->save();
             }
@@ -265,7 +256,6 @@ class Alternatif extends Model
         $headers = [
             'No',
             'Nama',
-            'Kelas',
         ];
 
         foreach ($kriterias as $kriteria) $headers[] = "{$kriteria->nama} ({$kriteria->kode})\n{$kriteria->dari}-{$kriteria->sampai}";
@@ -440,7 +430,6 @@ class Alternatif extends Model
         $headers = [
             'No',
             'Nama',
-            'Kelas',
         ];
 
         foreach ($kriterias as $kriteria) $headers[] = "{$kriteria->nama} ({$kriteria->kode})\n{$kriteria->dari}-{$kriteria->sampai}";
@@ -535,7 +524,6 @@ class Alternatif extends Model
             $detail = (object)$detail;
             $sheet->setCellValue(chr(65 + $c) . "$row", ($row - 5));
             $sheet->setCellValue(chr(65 + ++$c) . "$row", $detail->nama);
-            $sheet->setCellValue(chr(65 + ++$c) . "$row", $detail->kelas);
             foreach ($detail->nilais as $nilai) {
                 $sheet->setCellValue(chr(65 + ++$c) . "$row", $nilai ? $nilai->nilai : '');
             }
